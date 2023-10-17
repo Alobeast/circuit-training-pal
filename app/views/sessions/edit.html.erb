@@ -1,0 +1,9 @@
+<main class="container">
+  <%= link_to sanitize("&larr; Back to session"), session_path(@session) %>
+
+  <div class="header">
+    <h1>Edit session</h1>
+  </div>
+
+  <%= render "form", session: @session %>
+</main>

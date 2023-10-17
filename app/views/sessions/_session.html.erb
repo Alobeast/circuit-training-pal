@@ -1,0 +1,12 @@
+<div class="session">
+  <%= link_to session.name, session_path(session) %>
+  <div class="session__actions">
+    <%= button_to "Delete",
+                  session_path(session),
+                  method: :delete,
+                  class: "btn btn--light" %>
+    <%= link_to "Edit",
+                edit_session_path(session),
+                class: "btn btn--light" %>
+  </div>
+</div>

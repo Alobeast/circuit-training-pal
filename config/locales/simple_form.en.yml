@@ -1,0 +1,14 @@
+en:
+  simple_form:
+    placeholders:
+      session:
+        name: Name of your session
+    labels:
+      session:
+        name: Name
+
+  helpers:
+    submit:
+      session:
+        create: Create session
+        update: Update session

@@ -1,0 +1,10 @@
+<main class="container">
+  <div class="header">
+    <h1>Sessions</h1>
+    <%= link_to "New session",
+                new_session_path,
+                class: "btn btn--primary" %>
+  </div>
+
+  <%= render @sessions %>
+</main>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="overflow-y-scroll h-full">
   <head>
     <title>CircuitTrainingPal</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -7,10 +7,11 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body>
+  <body class="flex flex-col min-h-full bg-background text-body leading-normal font-sans">
     <%= yield %>
   </body>
 </html>

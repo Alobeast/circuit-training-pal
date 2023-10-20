@@ -33,31 +33,9 @@ module.exports = {
           display: 'block',
           maxWidth: '100%',
         },
-        '.link': {
-          color: 'hsl(350, 67%, 50%)',
-          textDecoration: 'none',
-          transition: 'color 200ms',
-        },
-        '.link:hover': {
-          color: 'hsl(10, 73%, 54%)',
-        },
-        '.link:focus': {
-          color: 'hsl(10, 73%, 54%)',
-        },
-        '.link:active': {
-          color: 'hsl(10, 73%, 54%)',
-        },
       };
 
-      addVariant('link', ({ modifySelectors, separator }) => {
-        modifySelectors(({ className }) => {
-          return `.link${separator}${className}:hover,
-          .link${separator}${className}:focus,
-          .link${separator}${className}:active`;
-        });
-      });
-
-      addUtilities(newUtilities, ['responsive', 'hover', 'link']);
+      addUtilities(newUtilities, ['responsive', 'hover']);
     },
   ],
 }

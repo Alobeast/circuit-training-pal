@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   before_action :set_session, only: [:show, :edit, :update, :destroy]
 
   def index
-    @sessions = Session.all
+    @sessions = Session.ordered
   end
 
   def show
@@ -16,7 +16,10 @@ class SessionsController < ApplicationController
     @session = Session.new(session_params)
 
     if @session.save
-      redirect_to sessions_path, notice: "Session was successfully created."
+      respond_to do |format|
+        format.html { redirect_to sessions_path, notice: "Session was successfully created." }
+        format.turbo_stream
+      end
     else
       render :new, status: :unprocessable_entity
     end
@@ -35,7 +38,10 @@ class SessionsController < ApplicationController
 
   def destroy
     @session.destroy
-    redirect_to sessions_path, notice: "Session was successfully destroyed."
+    respond_to do |format|
+      format.html { redirect_to sessions_path, notice: "Session was successfully destroyed." }
+      format.turbo_stream
+    end
   end
 
   private

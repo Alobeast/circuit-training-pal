@@ -1,12 +1,14 @@
-<div class="session">
-  <%= link_to session.name, session_path(session) %>
-  <div class="session__actions">
-    <%= button_to "Delete",
-                  session_path(session),
-                  method: :delete,
-                  class: "btn btn--light" %>
-    <%= link_to "Edit",
-                edit_session_path(session),
-                class: "btn btn--light" %>
+<%= turbo_frame_tag session do %>
+  <div class="session">
+    <%= link_to session.name, session_path(session), class: "link", data: { turbo_frame: "_top" } %>
+    <div class="session__actions">
+      <%= button_to "Delete",
+                    session_path(session),
+                    method: :delete,
+                    class: "btn btn--light" %>
+      <%= link_to "Edit",
+                  edit_session_path(session),
+                  class: "btn btn--light link" %>
+    </div>
   </div>
-</div>
+<% end %>

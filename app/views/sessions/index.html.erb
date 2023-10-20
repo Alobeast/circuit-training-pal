@@ -1,10 +1,14 @@
 <main class="container">
   <div class="header">
-    <h1 class="title">Sessions</h1>
+    <h1 class="title text-3xl">Sessions</h1>
     <%= link_to "New session",
                 new_session_path,
-                class: "btn btn--primary" %>
+                class: "btn btn--primary link",
+                data: { turbo_frame: dom_id(Session.new) } %>
   </div>
 
-  <%= render @sessions %>
+  <%= turbo_frame_tag Session.new %>
+  <%= turbo_frame_tag "sessions" do %>
+    <%= render @sessions %>
+  <% end %>
 </main>

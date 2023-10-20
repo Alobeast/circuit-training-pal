@@ -2,27 +2,19 @@ require "application_system_test_case"
 
 class SessionsTest < ApplicationSystemTestCase
   setup do
-    @session = sessions(:first) # Reference to the first fixture session
+    @session = Session.ordered.first # Reference to the first fixture session
   end
 
   test "Creating a new session" do
-    # When we visit the Sessions#index page
-    # we expect to see a title with the text "Sessions"
     visit sessions_path
     assert_selector "h1", text: "Sessions"
 
-    # When we click on the link with the text "New session"
-    # we expect to land on a page with the title "New session"
     click_on "New session"
-    assert_selector "h1", text: "New session"
-
-    # When we fill in the name input with "Capybara session"
-    # and we click on "Create Session"
     fill_in "Name", with: "Capybara session"
+
+    assert_selector "h1", text: "Sessions"
     click_on "Create session"
 
-    # We expect to be back on the page with the title "Sessions"
-    # and to see our "Capybara session" added to the list
     assert_selector "h1", text: "Sessions"
     assert_text "Capybara session"
   end
@@ -39,9 +31,9 @@ class SessionsTest < ApplicationSystemTestCase
     assert_selector "h1", text: "Sessions"
 
     click_on "Edit", match: :first
-    assert_selector "h1", text: "Edit session"
-
     fill_in "Name", with: "Updated session"
+
+    assert_selector "h1", text: "Sessions"
     click_on "Update session"
 
     assert_selector "h1", text: "Sessions"

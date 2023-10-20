@@ -1,9 +1,10 @@
 <main class="container">
-  <%= link_to sanitize("&larr; Back to sessions"), sessions_path %>
+  <%= link_to sanitize("&larr; Back to sessions"), sessions_path, class: "link" %>
 
   <div class="header">
-    <h1>New session</h1>
+    <h1 class="title text-3xl">New session</h1>
   </div>
-
-  <%= render "form", session: @session %>
+  <%= turbo_frame_tag @session do %>
+    <%= render "form", session: @session %>
+  <% end %>
 </main>

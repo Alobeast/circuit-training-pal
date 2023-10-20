@@ -1,0 +1,6 @@
+<%#= turbo_stream.prepend "sessions" do %>
+  <%#= render partial: "sessions/session", locals: { session: @session } %>
+<%# end %>
+
+<%= turbo_stream.prepend "sessions", @session %>
+<%= turbo_stream.update Session.new, "" %>

@@ -3,6 +3,90 @@
 @tailwind utilities;
 
 @layer components {
+  .img,
+    .picture,
+    .svg {
+      @apply block max-w-full;
+    }
+
+  .title {
+    @apply text-header leading-tight;
+  }
+
+  .link {
+      @apply text-primary no-underline transition duration-200;
+    }
+
+  .link:hover,
+  .link:focus,
+  .link:active {
+    @apply text-primary-rotate;
+  }
+
+  .btn {
+    @apply inline-block py-1.5 px-4 rounded-md bg-origin-border bg-transparent border-solid border-2 border-transparent font-bold no-underline cursor-pointer outline-none transition duration-300;
+  }
+
+  .btn:hover,
+  .btn:focus,
+  .btn:focus-within,
+  .btn:active {
+    @apply transition duration-300;
+  }
+
+  /* ADD btn--primary --secondary etc... */
+  .btn--primary {
+    @apply text-white bg-gradient-to-r from-primary to-primary-rotate;
+  }
+
+  .btn--primary:hover,
+  .btn--primary:focus,
+  .btn--primary:focus-within,
+  .btn--primary:active {
+    @apply text-white saturate-150 brightness-110;
+  }
+
+  .btn--secondary {
+    @apply text-white bg-gradient-to-r from-secondary to-secondary-rotate;
+  }
+
+  .btn--secondary:hover,
+  .btn--secondary:focus,
+  .btn--secondary:focus-within,
+  .btn--secondary:active {
+    @apply text-white saturate-150 brightness-110;
+  }
+
+  .btn--light {
+    @apply text-dark bg-light;
+  }
+
+  .btn--light:hover,
+  .btn--light:focus,
+  .btn--light:focus-within,
+  .btn--light:active {
+    @apply text-dark brightness-95;
+  }
+
+  .btn--dark {
+    @apply text-white border-dark bg-dark;
+  }
+
+  .btn--dark:hover,
+  .btn--dark:focus,
+  .btn--dark:focus-within,
+  .btn--dark:active {
+    @apply text-white;
+  }
+
+  .session {
+    @apply flex justify-between items-center gap-2 bg-white rounded-md shadow-sm mb-4 p-2 md:py-2 md:px-4;
+  }
+
+  .session__actions {
+    @apply flex flex-none self-start gap-2;
+  }
+
   .form {
     @apply flex flex-wrap gap-2;
     }
@@ -39,78 +123,8 @@
     @apply flex flex-wrap gap-3 justify-between mt-4 mb-6 md:mb-8;
   }
 
-  .img,
-  .picture,
-  .svg {
-    @apply block max-w-full;
-  }
-
-  .title {
-    @apply text-header leading-tight;
-  }
-
-  .btn {
-    @apply inline-block py-1.5 px-4 rounded-md bg-origin-border bg-transparent border-solid border-2 border-transparent font-bold no-underline cursor-pointer outline-none transition duration-300;
-  }
-
-  .btn:hover,
-  .btn:focus,
-  .btn:focus-within,
-  .btn:active {
-    @apply transition duration-300;
-  }
-
-  /* ADD btn--primary --secondary etc... */
-  .btn--primary {
-    @apply text-white bg-gradient-to-r from-primary to-primary-rotate;
-  }
-
-  .btn--primary:hover,
-  .btn--primary:focus,
-  .btn--primary:focus-within,
-  .btn--primary:active {
-    @apply text-white saturate-150 brightness-110;
-  }
-
-  .btn--secondary {
-    @apply text-white bg-gradient-to-r from-secondary to-secondary-rotate;
-  }
-
-  .btn--secondary:hover,
-  .btn--secondary:focus,
-  .btn--secondary:focus-within,
-  .btn--secondary:active {
-    @apply text-white saturate-100 brightness-100;
-  }
-
-  .btn--light {
-    @apply text-dark bg-light;
-  }
-
-  .btn--light:hover,
-  .btn--light:focus,
-  .btn--light:focus-within,
-  .btn--light:active {
-    @apply text-dark brightness-95;
-  }
-
-  .btn--dark {
-    @apply text-white border-dark bg-dark;
-  }
-
-  .btn--dark:hover,
-  .btn--dark:focus,
-  .btn--dark:focus-within,
-  .btn--dark:active {
-    @apply text-white;
-  }
-
-  .session {
-    @apply flex justify-between items-center gap-2 bg-white rounded-md shadow-sm mb-4 p-2 md:py-2 md:px-4;
-  }
-
-  .session__actions {
-    @apply flex flex-none self-start gap-2;
+  .turbo-progress-bar {
+    @apply bg-gradient-to-r from-primary to-primary-rotate;
   }
 }
 

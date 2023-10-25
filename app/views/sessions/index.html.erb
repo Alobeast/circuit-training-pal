@@ -10,7 +10,9 @@
   </div>
 
   <%= turbo_frame_tag Session.new %>
+
   <%= turbo_frame_tag "sessions" do %>
+    <%= render "sessions/empty_state" %>
     <%= render @sessions %>
   <% end %>
 </main>

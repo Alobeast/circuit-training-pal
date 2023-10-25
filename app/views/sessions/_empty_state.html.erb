@@ -1,0 +1,8 @@
+<div class="p-4 border-solid border-2 border-light border-dashed text-center hidden only:block">
+  <p class="text-lg text-header mb-6 font-bold">
+    You don't have any sessions yet!
+  </p>
+
+  <%= link_to "Add session", new_session_path, class: "btn btn--primary",
+    data: { turbo_frame: dom_id(Session.new) } %>
+</div>

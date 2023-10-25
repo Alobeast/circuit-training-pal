@@ -4,8 +4,8 @@
 
 @layer components {
   .img,
-    .picture,
-    .svg {
+  .picture,
+  .svg {
       @apply block max-w-full;
     }
 

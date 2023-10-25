@@ -126,5 +126,6 @@
   .turbo-progress-bar {
     @apply bg-gradient-to-r from-primary to-primary-rotate;
   }
+
 }
 

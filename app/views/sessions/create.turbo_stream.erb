@@ -4,3 +4,4 @@
 
 <%= turbo_stream.prepend "sessions", @session %>
 <%= turbo_stream.update Session.new, "" %>
+<%= render_turbo_stream_flash_messages %>

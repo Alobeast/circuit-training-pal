@@ -1,0 +1,11 @@
+<main class="container">
+  <%= link_to sanitize("&larr; Back to session"), session_path(@session), class: "link" %>
+
+  <div class="header">
+    <h1 class="title text-3xl">New Block</h1>
+  </div>
+
+  <%= turbo_frame_tag @block do %>
+    <%= render "form", session: @session, block: @block %>
+  <% end %>
+</main>

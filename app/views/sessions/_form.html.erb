@@ -1,9 +1,5 @@
 <%= simple_form_for session, html: { class: "session form" } do |f| %>
-  <% if session.errors.any? %>
-    <div class="error-message">
-      <%= session.errors.full_messages.to_sentence.capitalize %>
-    </div>
-  <% end %>
+  <%= form_error_notification(session) %>
 
   <%= f.input :name, input_html: { autofocus: true } %>
   <%= link_to "Cancel", sessions_path, class: "btn btn--light" %>

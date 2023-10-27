@@ -5,6 +5,7 @@
       <%= button_to "Delete",
                     session_path(session),
                     method: :delete,
+                    form: { data: { turbo_confirm: "Are you sure?" } },
                     class: "btn btn--light" %>
       <%= link_to "Edit",
                   edit_session_path(session),

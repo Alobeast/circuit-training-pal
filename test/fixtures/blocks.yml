@@ -1,0 +1,11 @@
+block_1:
+  session: first
+  name: "Block 1"
+
+block_2:
+  session: first
+  name: "Block 2"
+
+block_3:
+  session: first
+  name: "Block 3"

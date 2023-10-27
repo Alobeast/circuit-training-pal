@@ -127,5 +127,20 @@
     @apply bg-gradient-to-r from-primary to-primary-rotate;
   }
 
+  .block {
+    @apply mt-8 mb-1.5;
+  }
+
+  .block__header {
+    @apply flex items-center justify-between gap-2;
+  }
+
+  .block__title {
+    @apply text-xl md:text-2xl;
+  }
+
+  .block__actions {
+    @apply flex gap-2;
+  }
 }
 

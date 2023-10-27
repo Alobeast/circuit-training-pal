@@ -1,0 +1,6 @@
+<%= turbo_stream.update Block.new, "" %>
+<%= turbo_stream.append "blocks" do %>
+  <%= render @block, session: @session %>
+<% end %>
+
+<%= render_turbo_stream_flash_messages %>

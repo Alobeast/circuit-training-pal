@@ -1,4 +1,5 @@
 class Session < ApplicationRecord
+  has_many :blocks, dependent: :destroy
   validates :name, presence: true
 
   scope :ordered, -> { order(created_at: :desc) }

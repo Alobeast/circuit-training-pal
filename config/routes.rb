@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  resources :sessions
+  resources :sessions do
+    resources :blocks, except: [:index, :show]
+  end
 end

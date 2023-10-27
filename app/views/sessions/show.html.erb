@@ -1,8 +1,20 @@
 <main class="container">
   <%= link_to sanitize("&larr; Back to sessions"), sessions_path, class: "link" %>
+
   <div class="header">
     <h1 class="title text-3xl">
       <%= @session.name %>
     </h1>
+
+    <%= link_to "New block",
+                new_session_block_path(@session),
+                data: { turbo_frame: dom_id(Block.new) },
+                class: "btn btn--primary" %>
   </div>
+
+  <%= turbo_frame_tag Block.new %>
+
+  <%= turbo_frame_tag "blocks" do %>
+    <%= render @blocks, session: @session %>
+  <% end %>
 </main>

@@ -6,9 +6,14 @@ en:
     labels:
       session:
         name: Name
+      block:
+        name: Name
 
   helpers:
     submit:
       session:
         create: Create session
         update: Update session
+      block:
+        create: Create block
+        update: Update block

@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
   end
 
   def show
+    @blocks = @session.blocks.ordered
   end
 
   def new

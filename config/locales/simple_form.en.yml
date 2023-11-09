@@ -3,11 +3,21 @@ en:
     placeholders:
       session:
         name: Name of your session
+      exercise:
+        name: Name of your exercise
+        comment: Comment (optional)
+        reps: number of reps (eg 10-12)
+        weight: weight
     labels:
       session:
         name: Name
       block:
         name: Name
+      exercise:
+        name: Name
+        comment: Comment
+        reps: How many reps
+        weight: How heavy
 
   helpers:
     submit:
@@ -17,3 +27,6 @@ en:
       block:
         create: Create block
         update: Update block
+      exercise:
+        create: Create exercise
+        update: Update exercise

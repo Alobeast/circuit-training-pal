@@ -127,7 +127,7 @@
     @apply bg-gradient-to-r from-primary to-primary-rotate;
   }
 
-  .block {
+  .block_item {
     @apply mt-8 mb-1.5;
   }
 
@@ -141,6 +141,59 @@
 
   .block__actions {
     @apply flex gap-2;
+  }
+
+  .block__body {
+    @apply rounded-md bg-white shadow-sm mt-2 p-1.5 pt-0 md:p-4;
+  }
+
+  .block__footer {
+    @apply border-dashed border-2 border-light text-center rounded-md p-1.5 md:p-4;
+  }
+
+  .exercise {
+    @apply flex items-start flex-wrap bg-white gap-2 mb-3 p-2 rounded-md;
+  }
+
+  .exercise__footer {
+    @apply flex flex-grow flex-shrink basis-0 font-bold md:flex-1;
+  }
+
+  .exercise__comment {
+    @apply basis-full max-w-full text-muted font-normal text-sm;
+  }
+
+  /* .exercise__reps-weight {
+    @apply grow-0 shrink-0 basis-auto self-end justify-self-end order-3 font-bold md:hidden;
+  } */
+
+  .exercise__reps {
+    @apply md:basis-28;
+  }
+
+  .exercise__weight {
+    @apply flex-1 hidden md:flex md:grow-0 md:shrink-0 md:basis-36;
+  }
+
+  .exercise__actions {
+    @apply flex gap-2 order-2 flex-auto md:flex md:grow-0 md:shrink-0 md:basis-40;
+  }
+
+  .exercise--form {
+    @apply shadow-sm;
+  }
+
+  .exercise--form__reps,
+  .exercise--form__weight {
+      @apply block;
+    }
+
+  .exercise--form__comment {
+    @apply order-2;
+  }
+
+  .exercise--header {
+    @apply hidden bg-light mb-3 md:flex;
   }
 }
 

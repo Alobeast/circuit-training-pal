@@ -1,19 +1,42 @@
 <%= turbo_frame_tag block do %>
-  <div class="block">
-    <div class="block__header">
-      <h2 class="block__title">
-        <%= block.name %>
-      </h2>
+  <div class="block_item">
+    <%= turbo_frame_tag dom_id(block, :edit) do %>
+      <div class="block__header">
+        <h2 class="block__title">
+          <%= block.name %>
+        </h2>
 
-      <div class="block__actions">
-        <%= button_to "Delete",
-                      [session, block],
-                      method: :delete,
-                      class: "btn btn--light link",
-                      form: { data: { turbo_confirm: "Are you sure?" } } %>
-        <%= link_to "Edit",
-                    [:edit, session, block],
-                    class: "btn btn--light link" %>
+        <div class="block__actions">
+          <%= button_to "Delete",
+                        [session, block],
+                        method: :delete,
+                        class: "btn btn--light link",
+                        form: { data: { turbo_confirm: "Are you sure?" } } %>
+          <%= link_to "Edit",
+                      [:edit, session, block],
+                      class: "btn btn--light link" %>
+        </div>
+      </div>
+    <% end %>
+    <div class="block__body">
+      <div class="exercise exercise--header flex grid grid-cols-9 items-center">
+        <div class="exercise__name text-sm font-bold tracking-normal uppercase col-span-5">Exercise</div>
+        <div class="exercise__reps text-sm font-bold tracking-normal uppercase col-span-2">Reps X Weight</div>
+        <%# <div class="exercise__weight text-sm font-bold tracking-normal uppercase">Weight</div> %>
+        <div class="exercise__actions text-sm font-bold tracking-normal uppercase col-span-2"></div>
+      </div>
+
+      <%= turbo_frame_tag nested_dom_id(block, "exercises") do %>
+        <%= render block.exercises, session: session, block: block %>
+      <% end %>
+
+      <%= turbo_frame_tag nested_dom_id(block, Exercise.new) %>
+
+      <div class="block__footer">
+        <%= link_to "Add item",
+                    [:new, session, block, :exercise],
+                     data: { turbo_frame: nested_dom_id(block, Exercise.new) },
+                    class: "btn btn--primary link" %>
       </div>
     </div>
   </div>

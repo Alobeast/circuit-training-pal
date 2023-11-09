@@ -1,0 +1,31 @@
+<%= turbo_frame_tag exercise do %>
+  <div class="exercise grid grid-cols-9 items-center">
+    <div class="mb-0 exercise__name w-64 col-span-5">
+      <%= exercise.name %>
+      <div class="mb-0 exercise__comment">
+        <%= simple_format exercise.comment %>
+      </div>
+    </div>
+    <div class="mb-0 exercise__reps-weight ml-5 col-span-2">
+      <%= exercise.reps %>
+      &times;
+      <%= exercise.weight || "BW" %>
+    </div>
+    <%# <div class="mb-0 exercise__reps flex-1 flex-shrink-0 ml-5"> %>
+      <%#= exercise.reps %>
+    <%# </div> %>
+    <%# <div class="mb-0 exercise__weight flex-1 flex-shrink-0 ml-5"> %>
+      <%#= exercise.weight %>
+    <%# </div> %>
+    <div class="mb-0 exercise__actions col-span-2 justify-self-end">
+      <%= button_to "Delete",
+                    [session, block, exercise],
+                    method: :delete,
+                    class: "btn btn--light link",
+                    form: { data: { turbo_confirm: "Are you sure?" } } %>
+      <%= link_to "Edit",
+                  [:edit, session, block, exercise],
+                  class: "btn btn--light link" %>
+    </div>
+  </div>
+<% end %>

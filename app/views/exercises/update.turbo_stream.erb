@@ -1,0 +1,5 @@
+<%= turbo_stream.replace @exercise do %>
+  <%= render @exercise, session: @session, block: @block %>
+<% end %>
+
+<%= render_turbo_stream_flash_messages %>

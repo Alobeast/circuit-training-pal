@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
   end
 
   def show
-    @blocks = @session.blocks.ordered
+    @blocks = @session.blocks.includes(:exercises).ordered
   end
 
   def new

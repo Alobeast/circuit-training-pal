@@ -1,0 +1,20 @@
+<%= simple_form_for [session, block, exercise],
+                    html: { class: "form exercise exercise--form" } do |f| %>
+
+  <%= form_error_notification(exercise) %>
+
+  <%= f.input :name,
+              wrapper_html: { class: "exercise__name" },
+              input_html: { autofocus: true } %>
+  <%= f.input :reps,
+              wrapper_html: { class: "exercise__reps" } %>
+  <%= f.input :weight,
+              wrapper_html: { class: "exercise__weight" } %>
+  <%= f.input :comment,
+              wrapper_html: { class: "exercise__comment" } %>
+
+  <div class="exercise__actions">
+    <%= link_to "Cancel", session_path(session), class: "btn btn--light link" %>
+    <%= f.submit class: "btn btn--secondary link" %>
+  </div>
+<% end %>

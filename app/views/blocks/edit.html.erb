@@ -5,7 +5,7 @@
     <h1 class="title text-3xl" >Edit block</h1>
   </div>
 
-  <%= turbo_frame_tag @block do %>
+  <%= turbo_frame_tag dom_id(@block, :edit) do %>
     <%= render "form", session: @session, block: @block %>
   <% end %>
 </main>

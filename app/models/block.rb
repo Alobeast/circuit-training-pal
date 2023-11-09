@@ -1,4 +1,5 @@
 class Block < ApplicationRecord
+  has_many :exercises, dependent: :destroy
   belongs_to :session
 
   validates :name, presence: true, uniqueness: { scope: :session_id }

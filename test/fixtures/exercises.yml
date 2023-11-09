@@ -1,0 +1,24 @@
+burpees:
+  block: block_1
+  name: Burpees
+  comment: typing a very long comment so taht I can debug wha'ts happening in the view
+  reps: 10
+
+weigthed_pullups:
+  block: block_1
+  name: Weigthed pullups
+  reps: 8
+  weight: 15
+
+push_ups:
+  block: block_2
+  name: Push ups
+  comment: raised feets if it's too easy
+  reps: 12
+
+squats:
+  block: block_2
+  name: Very long exercise name just to keep on debugging ya know how we do it
+  comment: Use 2 kettlebells
+  reps: 10
+  weight: 20
